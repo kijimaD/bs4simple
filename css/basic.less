@@ -57,17 +57,36 @@ h6 {
 }
 
 h1 {
-    font-size: 2em;
-    margin: 0 0 0.444em;
+    margin: 0 0 0.4em;
+    font-size: 3.6em;
+    font-weight: 900;
 }
 h2 {
-    font-size: 1.5em;
-    margin: 0 0 0.666em;
+    // font-size: 1.5em;
+    // margin: 0 0 0.666em;
+    font-size: 1.2em;
+    margin: 0.4em 0 0em 0;
+    font-weight: 700;
+    /* color: #333; */
+    color: #dc3545;
+    background:transparent;
 }
+
+h2:first-letter{
+	font-size: 1.4em;
+}
+
 h3 {
     font-size: 1.125em;
-    margin: 0 0 0.888em;
+    margin: 0.4em 0 0em 0;
+    color: #343a40;
 }
+
+h3::before{
+    content: "\025b2";
+    color: #dc3545;
+}
+
 h4 {
     font-size: 1em;
     margin: 0 0 1.0em;
@@ -432,7 +451,7 @@ button,
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    color: #000000;
+    color: black;
     border-color: black;
     // float: right;
 }
@@ -480,7 +499,7 @@ button:focus,
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    color: #fff;
+    color: white;
     background-color: #343a40;
     border-color: #343a40;
     // float: right;
