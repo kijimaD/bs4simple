@@ -36,11 +36,9 @@ $showSidebar = $hasSidebar && ($ACT=='show');
 		    <div class="row">
 
 			     <!-- ********** CONTENT ********** -->
-			     <div class="col-11 shadow">
+			     <div class="col-12 shadow">
 				 <div id="dokuwiki__content"><div class="pad group">
 				     <?php html_msgarea() ?>
-
-				     <div class="pageId"><span><?php echo hsc($ID) ?></span></div>
 
 				     <div class="page group">
 					 <?php tpl_flush() ?>
@@ -59,7 +57,6 @@ $showSidebar = $hasSidebar && ($ACT=='show');
 			     <!-- /content -->
 
 			     <!-- PAGE ACTIONS -->
-			     <div class="col-1">
 				 <div id="dokuwiki__pagetools">
 				     <h3 class="a11y"><?php echo $lang['page_tools']; ?></h3>
 				     <div class="tools">
@@ -68,7 +65,6 @@ $showSidebar = $hasSidebar && ($ACT=='show');
 					 </ul>
 				     </div>
 				 </div>
-			     </div>
 		    </div><!-- row -->
 		</div><!-- container -->
 	    </div><!-- wrapper -->

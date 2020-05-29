@@ -6,6 +6,7 @@
 
 /* link to footnote inside the text */
 .dokuwiki sup a.fn_top {
+    color: #dc3545;
 }
 /* JSpopup */
 div.insitu-footnote {
