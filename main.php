@@ -31,7 +31,8 @@ $showSidebar = $hasSidebar && ($ACT=='show');
 												  echo ($showSidebar) ? 'showSidebar' : ''; ?> <?php echo ($hasSidebar) ? 'hasSidebar' : ''; ?>">
 
             <?php include('tpl_header.php') ?>
-	    <div class="container">
+	    <div class="wrapper group">
+		<div class="container">
 		<div class="row">
 
 			<?php if($showSidebar): ?>
@@ -79,7 +80,8 @@ $showSidebar = $hasSidebar && ($ACT=='show');
 			    </div>
 			</div>
 		</div><!-- row -->
-	    </div><!-- container -->
+		</div><!-- container -->
+	    </div>
 	    <?php include('tpl_footer.php') ?>
 	</div></div><!-- /site -->
 
