@@ -129,6 +129,5 @@ if (!defined('DOKU_INC')) die();
 			<hr class="a11y" />
 	    </ul>
     </div>
-    </div>
 </nav>
 <!-- /header -->
