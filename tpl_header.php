@@ -64,7 +64,7 @@ if (!defined('DOKU_INC')) die();
 
 			<!-- モバイルツール -->
 			<li class="nav-item mx-2 dropdown">
-			    <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			    <a href="#" class="nav-link dropdown-toggle text-secondary" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 				<?php if ($conf['useacl']):
 				if (!empty($_SERVER['REMOTE_USER'])) {
 				    echo $_SERVER['REMOTE_USER'];

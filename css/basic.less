@@ -15,7 +15,7 @@ html {
 html,
 body {
     color: @ini_text;
-    background: @ini_background_site url(images/page-gradient.png) top left repeat-x;
+    // background: @ini_background_site url(images/page-gradient.png) top left repeat-x;
     margin: 0;
     padding: 0;
 }
@@ -393,9 +393,10 @@ input,
 textarea,
 select,
 keygen {
-    border: 1px solid #ccc;
-    box-shadow: inset 0 0 1px #eee;
-    border-radius: 2px;
+    border: 1px solid;
+    border-color: #6c757d;
+    border-radius: .25rem;
+    box-shadow: none;
 }
 input:active,
 input:focus,
