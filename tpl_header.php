@@ -47,31 +47,6 @@ if (!defined('DOKU_INC')) die();
 	    <ul class="navbar-nav py-3">
 		<!-- USER TOOLS -->
 
-		<!-- ドロップダウン(ユーザメニュー) -->
-		<li class="nav-item mx-2 dropdown">
-		    <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			<?php if ($conf['useacl']): ?>
-			    <?php
-			    if (!empty($_SERVER['REMOTE_USER'])) {
-				echo $_SERVER['REMOTE_USER'];
-			    }else{
-				echo 'N/A';
-			    }
-			    ?>
-		    </a>
-		    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-			<?php
-			$items = (new \dokuwiki\Menu\UserMenu())->getItems();
-			foreach($items as $item) {
-			    echo '<li><a class="nav-item mx-2" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
-			       . $item->getLabel()
-			       . '</a></li>';
-			}
-			?>
-		    </ul>
-		</li>
-			<?php endif ?>
-
 			<!-- ページメニュー -->
 			<li class="nav-item mx-2 dropdown d-lg-none">
 			    <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Page</a>
@@ -89,7 +64,16 @@ if (!defined('DOKU_INC')) die();
 
 			<!-- モバイルツール -->
 			<li class="nav-item mx-2 dropdown">
-			    <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Mobile</a>
+			    <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				<?php if ($conf['useacl']):
+				if (!empty($_SERVER['REMOTE_USER'])) {
+				    echo $_SERVER['REMOTE_USER'];
+				}else{
+				    echo 'N/A';
+				}
+				endif
+				?>
+			    </a>
 			    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 				<?php
 				$items = (new \dokuwiki\Menu\MobileMenu())->getItems();
