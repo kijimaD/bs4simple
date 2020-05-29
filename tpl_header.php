@@ -11,10 +11,10 @@ if (!defined('DOKU_INC')) die();
 <?php tpl_includeFile('header.html') ?>
 
 <!-- ナビゲーションバー -->
-<nav class="navbar navbar-expand-md navbar-light">
+<nav class="navbar navbar-expand-md navbar-light p-0">
 
     <!-- サブコンポーネント -->
-    <div class="container">
+    <div class="container p-0">
 
 	<!-- ブランドのhref ..ルートの指定方法がわからないのでphpを使う意味がない状態になっている。-->
 	<?php
@@ -103,7 +103,7 @@ if (!defined('DOKU_INC')) die();
 			</li>
 
 			<!-- 検索 -->
-			<li class="nav-item mx-2">
+			<li class="nav-item">
 			    <?php /*tpl_searchform();*/ ?>
 			    <form action="/doku.php?id=start" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" />
 				<input type="hidden" name="id" value="start" /><div class="no">
