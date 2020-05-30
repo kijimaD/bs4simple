@@ -63,56 +63,56 @@ if (!defined('DOKU_INC')) die();
 		     </ul>
 		     </li> -->
 
-			<!-- モバイルツール -->
-			<li class="nav-item mx-2 dropdown">
-			    <a href="#" class="nav-link dropdown-toggle text-secondary" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-				<?php if ($conf['useacl']):
-				if (!empty($_SERVER['REMOTE_USER'])) {
-				    echo $_SERVER['REMOTE_USER'];
-				}else{
-				    echo 'N/A';
-				}
-				endif
-				?>
-			    </a>
-			    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-				<?php
-				$items = (new \dokuwiki\Menu\MobileMenu())->getItems();
-				foreach($items as $item) {
-				    echo '<li><a class="nav-item mx-2" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
-				       . $item->getLabel()
-				       . '</a></li>';
-				}
-				?>
-			    </ul>
-			</li>
+		<!-- モバイルツール -->
+		<li class="nav-item mx-2 dropdown">
+		    <a href="#" class="nav-link dropdown-toggle text-secondary" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			<?php if ($conf['useacl']):
+			if (!empty($_SERVER['REMOTE_USER'])) {
+			    echo $_SERVER['REMOTE_USER'];
+			}else{
+			    echo 'N/A';
+			}
+			endif
+			?>
+		    </a>
+		    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+			<?php
+			$items = (new \dokuwiki\Menu\MobileMenu())->getItems();
+			foreach($items as $item) {
+			    echo '<li><a class="nav-item mx-2" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
+			       . $item->getLabel()
+			       . '</a></li>';
+			}
+			?>
+		    </ul>
+		</li>
 
-			<!-- 検索 -->
-			<li class="nav-item">
-			    <?php /*tpl_searchform();*/ ?>
-			    <form action="/doku.php?id=start" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" />
-				<input type="hidden" name="id" value="start" /><div class="no">
-				    <input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="" autocomplete="on" id="qsearch__in" value="" />
-				    <button value="1" type="submit" title="検索" class="btn">検索</button>
-				</div>
-	</div>
-			    </form>
-			</li>
+		<!-- 検索 -->
+		<li class="nav-item ml-0">
+		    <?php /*tpl_searchform();*/ ?>
+		    <form action="/doku.php?id=start" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" />
+			<input type="hidden" name="id" value="start" />
+			<div class="no">
+			    <input name="q" class="border-secondary text-secondary" type="text" class="edit" title="[F]" accesskey="f" placeholder="Search.." autocomplete="on" id="qsearch__in" value="" />
+			    <button value="1" type="submit" title="検索" class="p-1 border-secondary btn-outline-secondary"><i class="fas fa-search"></i></button>
+			</div>
+		    </form>
+		</li>
 
-			<!-- BREADCRUMBS -->
-			<?php if($conf['breadcrumbs'] || $conf['youarehere']): ?>
-			    <!-- <div class="breadcrumbs">
-				 <?php if($conf['youarehere']): ?>
-				 <div class="youarehere"><?php tpl_youarehere() ?></div>
-				 <?php endif ?>
-				 <?php if($conf['breadcrumbs']): ?>
-				 <div class="trace"><?php tpl_breadcrumbs() ?></div>
-				 <?php endif ?>
-				 </div> -->
-			<?php endif ?>
+		<!-- BREADCRUMBS -->
+		<?php if($conf['breadcrumbs'] || $conf['youarehere']): ?>
+		    <!-- <div class="breadcrumbs">
+			 <?php if($conf['youarehere']): ?>
+			 <div class="youarehere"><?php tpl_youarehere() ?></div>
+			 <?php endif ?>
+			 <?php if($conf['breadcrumbs']): ?>
+			 <div class="trace"><?php tpl_breadcrumbs() ?></div>
+			 <?php endif ?>
+			 </div> -->
+		<?php endif ?>
 
-			<hr class="a11y" />
+		<hr class="a11y" />
 	    </ul>
-    </div>
+	</div>
 </nav>
 <!-- /header -->
