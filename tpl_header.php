@@ -16,7 +16,7 @@ if (!defined('DOKU_INC')) die();
     <!-- サブコンポーネント -->
     <div class="container p-0">
 
-	<!-- ブランドのhref ..ルートの指定方法がわからないのでphpを使う意味がない状態になっている。-->
+	<!-- ブランドのhref ..ルートの指定方法がわからない。-->
 	<?php
 	echo '<a class="navbar-brand" style="font-weight:900;" href="'
 	    .'/doku.php?id=start">'
