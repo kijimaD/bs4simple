@@ -12,21 +12,31 @@
 div.insitu-footnote {
     max-width: 40%;
     min-width: 5em;
+
+    color: #343a40;
+    border: 1px solid transparent;
+    border-color: #6c757d;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 /*____________ footnotes at the bottom of the page ____________*/
 
 .dokuwiki div.footnotes {
-    border-top: 1px solid @ini_border;
-    padding: .5em 0 0 0;
-    margin: 1em 0 0 0;
+    border-top: 1px solid #343a40;
+    padding: 0.5em 0 0 0;
+    margin: 3em 0 0 0;
     clear: both;
 }
 .dokuwiki div.footnotes div.fn {
+    margin: 0px 0px 1em 0px;
 }
 .dokuwiki div.footnotes div.fn div.content {
     display: inline;
 }
 .dokuwiki div.footnotes div.fn sup a.fn_bot {
     font-weight: bold;
+    color: #dc3545;
 }
