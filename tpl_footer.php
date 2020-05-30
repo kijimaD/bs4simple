@@ -9,7 +9,7 @@ if (!defined('DOKU_INC')) die();
 
 <!-- ********** FOOTER ********** -->
 <div id="dokuwiki__footer"><div class="pad">
-    <small>copyright</small>
+
 </div></div><!-- /footer -->
 
 <?php
