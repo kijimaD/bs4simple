@@ -47,20 +47,21 @@ if (!defined('DOKU_INC')) die();
 	    <ul class="navbar-nav py-3">
 		<!-- USER TOOLS -->
 
-			<!-- ページメニュー -->
-			<li class="nav-item mx-2 dropdown d-lg-none">
-			    <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Page</a>
-			    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-				<?php
-				$items = (new \dokuwiki\Menu\PageMenu())->getItems();
-				foreach($items as $item) {
-				    echo '<li><a class="nav-item mx-2" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
-				       . $item->getLabel()
-				       . '</a></li>';
-				}
-				?>
-			    </ul>
-			</li>
+		<!-- ページメニュー -->
+
+		<!-- <li class="nav-item mx-2 dropdown d-lg-none">
+		     <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Page</a>
+		     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+		     <?php
+		     $items = (new \dokuwiki\Menu\PageMenu())->getItems();
+		     foreach($items as $item) {
+		     echo '<li><a class="nav-item mx-2" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
+		     . $item->getLabel()
+		     . '</a></li>';
+		     }
+		     ?>
+		     </ul>
+		     </li> -->
 
 			<!-- モバイルツール -->
 			<li class="nav-item mx-2 dropdown">
