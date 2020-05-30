@@ -49,8 +49,12 @@ function ua_smt (){
 		<div class="container">
 		    <div class="row">
 
-			     <!-- ********** CONTENT ********** -->
-			<div class="col-12 px-4 mt-4 border-left border-dark">
+			<!-- ********** CONTENT ********** -->
+			<?php if (ua_smt() == true){
+			    echo '<div class="col-12 mt-4">';
+			} else {
+			    echo '<div class="col-12 px-4 mt-4 border-left border-dark">';
+			} ?>
 			    <div id="dokuwiki__content"><div class="pad group">
 				<?php html_msgarea() ?>
 
