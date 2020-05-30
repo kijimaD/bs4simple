@@ -36,20 +36,22 @@ $showSidebar = $hasSidebar && ($ACT=='show');
 		    <div class="row">
 
 			     <!-- ********** CONTENT ********** -->
-			     <div class="col-12 shadow px-4 py-4">
+			     <div class="col-12 px-4 pt-4">
 				 <div id="dokuwiki__content"><div class="pad group">
 				     <?php html_msgarea() ?>
 
-				     <div class="page group">
+				     <div class="page group border-left border-dark py-0">
 					 <?php tpl_flush() ?>
 					 <?php tpl_includeFile('pageheader.html') ?>
 					 <!-- wikipage start -->
 					 <?php tpl_content() ?>
 					 <!-- wikipage stop -->
 					 <?php tpl_includeFile('pagefooter.html') ?>
+
+					 <small><div class="docInfo text-right text-secondary"><?php tpl_pageinfo() ?></div></small>
 				     </div>
 
-				     <div class="docInfo text-right text-secondary"><?php tpl_pageinfo() ?></div>
+
 
 				     <?php tpl_flush() ?>
 				 </div></div>
