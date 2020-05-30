@@ -13,7 +13,21 @@ header('X-UA-Compatible: IE=edge,chrome=1');
 
 $hasSidebar = page_findnearest($conf['sidebar']);
 $showSidebar = $hasSidebar && ($ACT=='show');
-?><!DOCTYPE html>
+
+function ua_smt (){
+    //ユーザーエージェントを取得
+    $ua = $_SERVER['HTTP_USER_AGENT'];
+    //スマホと判定する文字リスト
+    $ua_list = array('iPhone','iPad','iPod','Android');
+    foreach ($ua_list as $ua_smt) {
+	//ユーザーエージェントに文字リストの単語を含む場合はTRUE、それ以外はFALSE
+	if (strpos($ua, $ua_smt) !== false) {
+	    return true;
+	}
+    } return false;
+}
+?>
+<!DOCTYPE html>
 <html lang="<?php echo $conf['lang'] ?>" dir="<?php echo $lang['direction'] ?>" class="no-js">
     <head>
 	<meta charset="utf-8" />
@@ -44,7 +58,12 @@ $showSidebar = $hasSidebar && ($ACT=='show');
 				    <?php tpl_flush() ?>
 				    <?php tpl_includeFile('pageheader.html') ?>
 				    <!-- wikipage start -->
-				    <?php tpl_content(false) ?>
+				    <?php if (ua_smt() == true){
+					tpl_content(false); /* if mobile, not display TOC. */
+				    } else {
+					tpl_content();
+				    }
+				    ?>
 				    <!-- wikipage stop -->
 				    <?php tpl_includeFile('pagefooter.html') ?>
 
