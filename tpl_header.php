@@ -98,7 +98,6 @@ if (!defined('DOKU_INC')) die();
 			</div>
 		    </form>
 		</li>
-	</div>
 
 	<!-- BREADCRUMBS -->
 	<?php if($conf['breadcrumbs'] || $conf['youarehere']): ?>
