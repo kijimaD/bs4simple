@@ -11,14 +11,14 @@ if (!defined('DOKU_INC')) die();
 <?php tpl_includeFile('header.html') ?>
 
 <!-- ナビゲーションバー -->
-<nav class="navbar navbar-expand-md navbar-light p-0">
+<nav class="navbar navbar-expand-md p-0">
 
     <!-- サブコンポーネント -->
     <div class="container p-0">
 
 	<!-- ブランドのhref ..ルートの指定方法がわからない。-->
 	<?php
-	echo '<a class="navbar-brand" style="font-weight:900;" href="'
+	echo '<a class="navbar-brand text-dark" style="font-weight:900;" href="'
 	    .'/doku.php?id=start">'
             .$conf['title'].'</a>';
 	?>
@@ -41,6 +41,7 @@ if (!defined('DOKU_INC')) die();
 	<div class="collapse navbar-collapse" id="navbar-content">
 
 	    <ul class="navbar-nav mr-auto">
+
 	    </ul>
 
 	    <!-- トップメニュー -->
@@ -65,7 +66,7 @@ if (!defined('DOKU_INC')) die();
 
 		<!-- モバイルツール -->
 		<li class="nav-item mx-2 dropdown">
-		    <a href="#" class="nav-link dropdown-toggle text-secondary" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+		    <a href="#" class=" nav-link dropdown-toggle" id="mldropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 			<?php if ($conf['useacl']):
 			if (!empty($_SERVER['REMOTE_USER'])) {
 			    echo $_SERVER['REMOTE_USER'];
@@ -93,8 +94,8 @@ if (!defined('DOKU_INC')) die();
 		    <form action="/doku.php?id=start" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" />
 			<input type="hidden" name="id" value="start" />
 			<div class="no">
-			    <input name="q" class="border-secondary text-secondary" type="text" class="edit" title="[F]" accesskey="f" placeholder="Search.." autocomplete="on" id="qsearch__in" value="" />
-			    <button value="1" type="submit" title="検索" class="p-1 border-secondary btn-outline-secondary"><i class="fas fa-search"></i></button>
+			    <input name="q" class="edit border-secondary text-secondary" type="text" title="[F]" accesskey="f" placeholder="" autocomplete="on" id="qsearch__in" value="" />
+			    <button value="1" type="submit" title="検索" class="border-secondary btn-outline-secondary"><i class="fas fa-search"></i></button>
 			</div>
 		    </form>
 		</li>
