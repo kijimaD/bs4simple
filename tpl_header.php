@@ -29,8 +29,9 @@ if (!defined('DOKU_INC')) die();
 	<?php endif ?>
 
 	<!-- ハンバーガーボタン -->
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
+	<button class="navbar-toggler btn" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"><i class="fas fa-bars"></i>
+	    </span>
 	</button>
 
 	<!-- <ul class="a11y skip">
