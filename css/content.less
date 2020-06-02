@@ -303,12 +303,16 @@
     letter-spacing: .1em;
 }
 
+.dokuwiki h3.toggle::before {
+    content: "▼";
+}
+
 #dokuwiki__aside h3.toggle {
     display: none;
 }
 
 .dokuwiki .toggle strong {
-    background: transparent url(images/toc-arrows.png) 0 0;
+    // background: transparent url(images/toc-arrows.png) 0 0;
     width: 8px;
     height: 5px;
     margin: .4em 0 0;
@@ -330,10 +334,20 @@
 
     ul {
         padding: 0 0 0 1.2em;
-
         li {
-            list-style-image: url(images/toc-bullet.png);
+            // list-style-image: url(images/toc-bullet.png);
         }
+	li a::before{
+	    // color: #343a30;
+	    // content: "\f06d";	// energy
+	    // content: "\f70b";	// roop
+	    // content: "\f018";	// rail
+	    // content: "\f46a";	// fire
+
+	    // font-family: "Font Awesome 5 Free";
+	    // font-weight: 900;
+	    // margin: 0 0.4em 0 0;
+}
     }
 
     ul li.clear {
