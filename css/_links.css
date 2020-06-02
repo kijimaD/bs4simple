@@ -39,8 +39,18 @@
 }
 /* external link */
 .dokuwiki a.urlextern {
-    background-image: url(../../images/external-link.png);
+    /* background-image: url(../../images/external-link.png); */
+    padding: 0;
 }
+
+.dokuwiki a.urlextern::before {
+    margin: 0 0.2em 0 0;
+    content: "\f0ac";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900; /* If 'solid' image, should define 900 bold */
+    color: #343a40;
+}
+
 /* windows share */
 .dokuwiki a.windows {
     background-image: url(../../images/unc.png);
