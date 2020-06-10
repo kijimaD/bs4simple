@@ -50,12 +50,30 @@ function ua_smt (){
 		<div class="container">
 		    <div class="row">
 
-			<!-- ********** CONTENT ********** -->
 			<?php if (ua_smt() == true){
 			    echo '<div class="col-12 mt-4">';
 			} else {
 			    echo '<div class="col-12 px-4 mt-4 border-left border-dark">';
 			} ?>
+
+			<?php if (ua_smt() == false): ?>
+			<?php if($showSidebar): ?>
+			    <!-- ********** ASIDE ********** -->
+			    <div id="dokuwiki__aside"><div class="pad aside include group">
+				<h3 class="toggle"><?php echo $lang['sidebar'] ?></h3>
+				<div class="content"><div class="group">
+				    <?php tpl_flush() ?>
+				    <?php tpl_includeFile('sidebarheader.html') ?>
+				    <?php tpl_include_page($conf['sidebar'], true, true) ?>
+				    <?php tpl_includeFile('sidebarfooter.html') ?>
+				</div></div>
+			    </div></div><!-- /aside -->
+			<?php endif; ?>
+			<?php endif; ?>
+
+
+			<!-- ********** CONTENT ********** -->
+
 			    <div id="dokuwiki__content"><div class="pad group">
 				<?php html_msgarea() ?>
 
