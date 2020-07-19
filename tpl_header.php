@@ -114,15 +114,15 @@ if (!defined('DOKU_INC')) die();
 		</ul>
 	    </div>
     <?php else: ?>
-	    <div class="container border-bottom border-dark">
-		<ul class="navbar-nav py-1">
-		    <li class="nav-item">
+	    <div class="container border-bottom border-dark px-0">
+		<!-- <ul class="navbar-nav py-1">
+		     <li class="nav-item"> -->
 			<?php echo $DOKU_TPL; ?>
 			<a href="/doku.php?id=start">
-			    <img src="<?php echo tpl_basedir(); ?>images/arrow.png" style="width: 2em; height: 2em;">
+			    <img src="<?php echo tpl_basedir(); ?>images/arrow.png" style="width: 3em; height: 3em;">
 			</a>
-		    </li>
-		</ul>
+			<!-- </li>
+			     </ul> -->
 	    </div>
     <?php endif; ?><!-- /start -->
 </nav>
