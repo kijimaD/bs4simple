@@ -42,85 +42,91 @@ function ua_smt (){
     </head>
 
     <body>
-	<div id="dokuwiki__site"><div id="dokuwiki__top" class="site <?php echo tpl_classes(); ?> <?php
-												  echo ($showSidebar) ? 'showSidebar' : ''; ?> <?php echo ($hasSidebar) ? 'hasSidebar' : ''; ?>">
+	<?php if($ID == 'start'): ?>
+	    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site <?php echo tpl_classes(); ?> <?php
+												      echo ($showSidebar) ? 'showSidebar' : ''; ?> <?php echo ($hasSidebar) ? 'hasSidebar' : ''; ?>">
+		<?php else: ?>
+		<div id="dokuwiki__site"><div id="dokuwiki__top" class="site">
+	<?php endif; ?><!-- /start -->
 
-            <?php include('tpl_header.php') ?>
-	    <div class="wrapper group">
-		<div class="container">
-		    <div class="row">
+        <?php include('tpl_header.php') ?>
+	<div class="wrapper group">
+	    <div class="container">
+		<div class="row">
 
-			<?php if (ua_smt() == true){
-			    echo '<div class="col-12 mt-4">';
-			} else {
-			    echo '<div class="col-12 px-4 mt-4 border-left border-dark">';
-			} ?>
+		    <?php if (ua_smt() == true){
+			echo '<div class="col-12 mt-4">';
+		    } else {
+			echo '<div class="col-12 px-4 mt-4">';
+		    } ?>
 
-			<?php if (ua_smt() == false): ?>
-			<?php if($showSidebar): ?>
-			    <!-- ********** ASIDE ********** -->
-			    <div id="dokuwiki__aside"><div class="pad aside include group">
-				<h3 class="toggle"><?php echo $lang['sidebar'] ?></h3>
-				<div class="content"><div class="group">
-				    <?php tpl_flush() ?>
-				    <?php tpl_includeFile('sidebarheader.html') ?>
-				    <?php tpl_include_page($conf['sidebar'], true, true) ?>
-				    <?php tpl_includeFile('sidebarfooter.html') ?>
-				</div></div>
-			    </div></div><!-- /aside -->
+		    <?php if($ID == 'start'): ?>
+			<?php if(ua_smt() == false): ?>
+			    <?php if($showSidebar): ?>
+				<!-- ********** ASIDE ********** -->
+				<div id="dokuwiki__aside"><div class="pad aside include group">
+				    <h3 class="toggle"><?php echo $lang['sidebar'] ?></h3>
+				    <div class="content"><div class="group">
+					<?php tpl_flush() ?>
+					<?php tpl_includeFile('sidebarheader.html') ?>
+					<?php tpl_include_page($conf['sidebar'], true, true) ?>
+					<?php tpl_includeFile('sidebarfooter.html') ?>
+				    </div></div>
+				</div></div><!-- /aside -->
+			    <?php endif; ?>
 			<?php endif; ?>
-			<?php endif; ?>
+		    <?php endif; ?>
 
 
-			<!-- ********** CONTENT ********** -->
+		    <!-- ********** CONTENT ********** -->
 
-			    <div id="dokuwiki__content"><div class="pad group">
-				<?php html_msgarea() ?>
+		    <div id="dokuwiki__content"><div class="pad group">
+			<?php html_msgarea() ?>
 
-				<div class="page group p-0">
-				    <?php tpl_flush() ?>
-				    <?php tpl_includeFile('pageheader.html') ?>
-				    <!-- wikipage start -->
-				    <?php if (ua_smt() == true){
-					tpl_content(false); /* if mobile, not display TOC. */
-				    } else {
-					tpl_content();
-				    }
-				    ?>
-				    <!-- wikipage stop -->
-				    <?php tpl_includeFile('pagefooter.html') ?>
+			<div class="page group p-0">
+			    <?php tpl_flush() ?>
+			    <?php tpl_includeFile('pageheader.html') ?>
+			    <!-- wikipage start -->
+			    <?php if (ua_smt() == true){
+				tpl_content(false); /* if mobile, not display TOC. */
+			    } else {
+				tpl_content();
+			    }
+			    ?>
+			    <!-- wikipage stop -->
+			    <?php tpl_includeFile('pagefooter.html') ?>
 
-				    <small><div class="docInfo text-right text-secondary"><?php tpl_pageinfo() ?></div></small>
-				</div>
+			    <small><div class="docInfo text-right text-secondary"><?php tpl_pageinfo() ?></div></small>
+			</div>
 
 
 
-				<?php tpl_flush() ?>
-				 </div></div>
-			     </div>
-			     <!-- /content -->
+			<?php tpl_flush() ?>
+		    </div></div>
+		</div>
+		<!-- /content -->
 
-			     <!-- PAGE ACTIONS -->
-				 <div id="dokuwiki__pagetools">
-				     <h3 class="a11y"><?php echo $lang['page_tools']; ?></h3>
-				     <div class="tools">
-					 <ul>
-					     <?php echo (new \dokuwiki\Menu\PageMenu())->getListItems(); ?>
-					 </ul>
-				     </div>
-				 </div>
-		    </div><!-- row -->
-		</div><!-- container -->
+		<!-- PAGE ACTIONS -->
+		<div id="dokuwiki__pagetools">
+		    <h3 class="a11y"><?php echo $lang['page_tools']; ?></h3>
+		    <div class="tools">
+			<ul>
+			    <?php echo (new \dokuwiki\Menu\PageMenu())->getListItems(); ?>
+			</ul>
+		    </div>
+		</div>
+	    </div><!-- row -->
+	</div><!-- container -->
 	    </div><!-- wrapper -->
 	    <?php include('tpl_footer.php') ?>
-	</div></div><!-- /site -->
+	    </div></div><!-- /site -->
 
-	<div class="no"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
-	<div id="screen__mode" class="no"></div><?php /* helper to detect CSS media query in script.js */ ?>
+	    <div class="no"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
+	    <div id="screen__mode" class="no"></div><?php /* helper to detect CSS media query in script.js */ ?>
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
+	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     </body>
 </html>

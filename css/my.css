@@ -28,7 +28,6 @@ div.tags::before{
     font-weight: 900;
 }
 
-
 /* make it easier to select the +/- checkboxes in the tagsearch table by making them block elements */
 div.dokuwiki form.plugin__tag_search label.plus, div.dokuwiki form.plugin__tag_search label.minus {
     display: block;
