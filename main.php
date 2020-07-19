@@ -53,7 +53,7 @@ function ua_smt (){
 	<div class="wrapper group">
 	    <div class="container">
 		<div class="row">
-		    <div class="col-12 px-4 mt-4">';
+		    <div class="col-12 px-4 mt-4">
 
 			<?php if($ID == 'start'): ?>
 			    <?php if($showSidebar): ?>
