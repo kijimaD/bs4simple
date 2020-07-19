@@ -57,14 +57,14 @@ function ua_smt (){
 		    <?php if (ua_smt() == true){
 			echo '<div class="col-12 mt-4">';
 		    } else {
-			echo '<div class="col-12 px-4 mt-4 border-left border-dark">';
+			echo '<div class="col-12 px-4 mt-4">';
 		    } ?>
 
 		    <?php if($ID == 'start'): ?>
 			<?php if(ua_smt() == false): ?>
 			    <?php if($showSidebar): ?>
 				<!-- ********** ASIDE ********** -->
-				<div id="dokuwiki__aside"><div class="pad aside include group">
+				<div id="dokuwiki__aside"><div class="pad aside include group border-right border-dark">
 				    <h3 class="toggle"><?php echo $lang['sidebar'] ?></h3>
 				    <div class="content"><div class="group">
 					<?php tpl_flush() ?>
@@ -75,7 +75,7 @@ function ua_smt (){
 				</div></div><!-- /aside -->
 			    <?php endif; ?>
 			<?php endif; ?>
-		    <?php endif; ?>
+		    <?php endif; ?><!-- /start -->
 
 
 		    <!-- ********** CONTENT ********** -->
