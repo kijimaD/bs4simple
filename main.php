@@ -57,7 +57,7 @@ function ua_smt (){
 		    <?php if (ua_smt() == true){
 			echo '<div class="col-12 mt-4">';
 		    } else {
-			echo '<div class="col-12 px-4 mt-4">';
+			echo '<div class="col-12 px-4 mt-4 border-left border-dark">';
 		    } ?>
 
 		    <?php if($ID == 'start'): ?>
