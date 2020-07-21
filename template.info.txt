@@ -2,6 +2,6 @@ base     dokuwiki
 author   Kijima Daigo
 email    norimaking777@gmail.com
 date     2020-07-22
-name     DokuWiki Template
+name     bs4simple
 desc     DokuWiki's template with Bootstrap 4
-url      http://www.dokuwiki.org/template:dokuwiki
+url      https://www.dokuwiki.org/template:bs4simple
