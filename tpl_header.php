@@ -10,43 +10,39 @@ if (!defined('DOKU_INC')) die();
 <!-- ********** HEADER ********** -->
 <?php tpl_includeFile('header.html') ?>
 
-<!-- ナビゲーションバー -->
+<!-- Navigation bar -->
 <nav class="navbar navbar-expand-md p-0">
 
-    <!-- サブコンポーネント -->
+    <!-- Sub component -->
     <?php if($ID == 'start'): ?>
 	<div class="container">
 	    <a class="navbar-brand text-dark" style="font-weight:900;" href="/doku.php?id=start">
 		<?php echo $conf['title']; ?>
 	    </a>
 
-	    <!-- タグライン？ -->
+	    <!-- Tagline -->
 	    <?php if ($conf['tagline']): ?>
 		<p class="claim"><?php echo $conf['tagline']; ?></p>
 	    <?php endif ?>
 
-	    <!-- ハンバーガーボタン -->
+	    <!-- Hamburgar button -->
 	    <button class="navbar-toggler btn" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"><i class="fas fa-bars"></i>
 		</span>
 	    </button>
 
-	    <!-- <ul class="a11y skip">
-		 <li><a href="#dokuwiki__content"><?php echo $lang['skip_to_content']; ?></a></li>
-		 </ul> -->
-
-	    <!-- ナビゲーション -->
+	    <!-- Navigation -->
 	    <div class="collapse navbar-collapse" id="navbar-content">
 
 		<ul class="navbar-nav mr-auto">
 
 		</ul>
 
-		<!-- トップメニュー -->
+		<!-- Topmenu -->
 		<ul class="navbar-nav py-3">
-		    <!-- USER TOOLS -->
+		    <!-- User tools -->
 
-		    <!-- ページメニュー -->
+		    <!-- Page menu -->
 
 		    <!-- <li class="nav-item mx-2 dropdown d-lg-none">
 			 <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Page</a>
@@ -62,7 +58,7 @@ if (!defined('DOKU_INC')) die();
 			 </ul>
 			 </li> -->
 
-		    <!-- モバイルツール -->
+		    <!-- Mobile tool -->
 		    <li class="nav-item mx-2 dropdown">
 			<a href="#" class=" nav-link dropdown-toggle" id="mldropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 			    <?php if ($conf['useacl']):
@@ -86,7 +82,7 @@ if (!defined('DOKU_INC')) die();
 			</ul>
 		    </li>
 
-		    <!-- 検索 -->
+		    <!-- Search bar -->
 		    <li class="nav-item ml-0">
 			<?php /*tpl_searchform();*/ ?>
 			<form action="/doku.php?id=start" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" />
@@ -117,12 +113,12 @@ if (!defined('DOKU_INC')) die();
 	    <div class="container border-bottom border-dark px-0">
 		<!-- <ul class="navbar-nav py-1">
 		     <li class="nav-item"> -->
-			<?php echo $DOKU_TPL; ?>
-			<a href="/doku.php?id=start">
-			    <img src="<?php echo tpl_basedir(); ?>images/arrow.png" style="width: 3em; height: 3em;">
-			</a>
-			<!-- </li>
-			     </ul> -->
+		<?php echo $DOKU_TPL; ?>
+		<a href="/doku.php?id=start">
+		    <img src="<?php echo tpl_basedir(); ?>images/arrow.png" style="width: 3em; height: 3em;">
+		</a>
+		<!-- </li>
+		     </ul> -->
 	    </div>
     <?php endif; ?><!-- /start -->
 </nav>

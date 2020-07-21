@@ -1,10 +1,9 @@
 <?php
 /**
- * DokuWiki Default Template 2012
+ * DokuWiki Template with Bootstrap4
  *
  * @link     http://dokuwiki.org/template
- * @author   Anika Henke <anika@selfthinker.org>
- * @author   Clarence Lee <clarencedglee@gmail.com>
+ * @author   Kijima Daigo <norimaking777@gmail.com>
  * @license  GPL 2 (http://www.gnu.org/licenses/gpl.html)
  */
 
@@ -15,12 +14,12 @@ $hasSidebar = page_findnearest($conf['sidebar']);
 $showSidebar = $hasSidebar && ($ACT=='show');
 
 function ua_smt (){
-    //ユーザーエージェントを取得
+    // Get user agent
     $ua = $_SERVER['HTTP_USER_AGENT'];
-    //スマホと判定する文字リスト
+    // Word list for checking mobile
     $ua_list = array('iPhone','iPad','iPod','Android');
     foreach ($ua_list as $ua_smt) {
-	//ユーザーエージェントに文字リストの単語を含む場合はTRUE、それ以外はFALSE
+	// mobile -> true
 	if (strpos($ua, $ua_smt) !== false) {
 	    return true;
 	}
