@@ -91,8 +91,6 @@ function ua_smt (){
 				<small><div class="docInfo text-right text-secondary"><?php tpl_pageinfo() ?></div></small>
 			    </div>
 
-
-
 			    <?php tpl_flush() ?>
 			</div></div>
 		    </div>

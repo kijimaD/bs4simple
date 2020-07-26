@@ -16,7 +16,7 @@ if (!defined('DOKU_INC')) die();
     <!-- Sub component -->
     <?php if($ID == 'start'): ?>
 	<div class="container">
-	    <a class="navbar-brand text-dark" style="font-weight:900;" href="/doku.php?id=start">
+	    <a class="navbar-brand text-dark" style="font-weight:900;" href="<?php  echo wl() ?>">
 		<?php echo $conf['title']; ?>
 	    </a>
 
@@ -111,14 +111,22 @@ if (!defined('DOKU_INC')) die();
 	    </div>
     <?php else: ?>
 	    <div class="container border-bottom border-dark px-0">
-		<!-- <ul class="navbar-nav py-1">
-		     <li class="nav-item"> -->
-		<?php echo $DOKU_TPL; ?>
-		<a href="/doku.php?id=start">
-		    <img src="<?php echo tpl_basedir(); ?>images/arrow.png" style="width: 3em; height: 3em;">
+		<h3>
+		    <a href="<?php echo wl() ?>" class="text-dark" style="text-decoration:none;">
+			<i class="fas fa-long-arrow-alt-left"></i>Home
 		</a>
-		<!-- </li>
-		     </ul> -->
+		</h3>
+
+		<?php
+		/* $logoSize = array();
+		   $logo = tpl_getMediaFile(array(':wiki:logo.png', ':logo.png', 'images/logo.png'), false, $logoSize); */
+		// display logo and wiki title in a link to the home page
+		/* tpl_link(
+		 *     wl(),
+		 *     'Home',
+		 *     'accesskey="h" title="[H]"'
+		   ); */
+		?>
 	    </div>
     <?php endif; ?><!-- /start -->
 </nav>
