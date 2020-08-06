@@ -32,3 +32,11 @@ div.tags::before{
 div.dokuwiki form.plugin__tag_search label.plus, div.dokuwiki form.plugin__tag_search label.minus {
     display: block;
 }
+
+/* Bootstrap add no need display property in this situation. Need to delete it */
+a.media{
+    display: inline !important;
+}
+img.media{
+    display: inline !important;
+}
