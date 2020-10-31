@@ -7,25 +7,10 @@
  * @license  GPL 2 (http://www.gnu.org/licenses/gpl.html)
  */
 
-if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
-header('X-UA-Compatible: IE=edge,chrome=1');
-
 $hasSidebar = page_findnearest($conf['sidebar']);
 $showSidebar = $hasSidebar && ($ACT=='show');
-
-function ua_smt (){
-    // Get user agent
-    $ua = $_SERVER['HTTP_USER_AGENT'];
-    // Word list for checking mobile
-    $ua_list = array('iPhone','iPad','iPod','Android');
-    foreach ($ua_list as $ua_smt) {
-	// mobile -> true
-	if (strpos($ua, $ua_smt) !== false) {
-	    return true;
-	}
-    } return false;
-}
 ?>
+
 <!DOCTYPE html>
 <html lang="<?php echo $conf['lang'] ?>" dir="<?php echo $lang['direction'] ?>" class="no-js">
     <head>
@@ -57,7 +42,7 @@ function ua_smt (){
 			<?php if($ID == 'start'): ?>
 			    <?php if($showSidebar): ?>
 				<!-- ********** ASIDE ********** -->
-				<div id="dokuwiki__aside"><div class="pad aside include group border-right border-dark">
+				<div id="dokuwiki__aside"><div class="pad aside include group shadow p-4">
 				    <h3 class="toggle"><?php echo $lang['sidebar'] ?></h3>
 				    <div class="content"><div class="group">
 					<?php tpl_flush() ?>
@@ -75,15 +60,12 @@ function ua_smt (){
 			<div id="dokuwiki__content"><div class="pad group">
 			    <?php html_msgarea() ?>
 
-			    <div class="page group p-0">
+			    <div class="page group p-4">
 				<?php tpl_flush() ?>
 				<?php tpl_includeFile('pageheader.html') ?>
 				<!-- wikipage start -->
-				<?php if (ua_smt() == true){
-				    tpl_content(false); /* if mobile, not display TOC. */
-				} else {
-				    tpl_content();
-				}
+				<?php
+				tpl_content();
 				?>
 				<!-- wikipage stop -->
 				<?php tpl_includeFile('pagefooter.html') ?>
