@@ -60,7 +60,7 @@ $showSidebar = $hasSidebar && ($ACT=='show');
 			<div id="dokuwiki__content"><div class="pad group">
 			    <?php html_msgarea() ?>
 
-			    <div class="page group p-4">
+			    <div class="page group p-0">
 				<?php tpl_flush() ?>
 				<?php tpl_includeFile('pageheader.html') ?>
 				<!-- wikipage start -->
