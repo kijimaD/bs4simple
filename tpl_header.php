@@ -86,7 +86,7 @@ if (!defined('DOKU_INC')) die();
 		<!-- Search bar -->
 		<li class="nav-item ml-0">
 		    <?php /*tpl_searchform();*/ ?>
-		    <form action="/doku.php?id=start" method="get" role="search" class="search doku_form form-group form-inline" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" />
+		    <form action="doku.php?id=start" method="get" role="search" class="search doku_form form-group form-inline" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" />
 			<input type="hidden" name="id" value="start" />
 			<div class="no">
 			    <input name="q" class="edit border-secondary text-secondary form-control" type="text" title="[F]" accesskey="f" placeholder="" autocomplete="on" id="qsearch__in" value="" />
